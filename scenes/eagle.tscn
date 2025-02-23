@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq8sxetw7t5tv"]
+
+[ext_resource type="Texture2D" uid="uid://cfa2i0v7whspu" path="res://assets/animals/eagle/eagle_base.png" id="1_7djim"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8orr"]
+atlas = ExtResource("1_7djim")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpcvn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8orr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Eagle" type="Node2D"]
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_kpcvn")
+animation = &"idle"
